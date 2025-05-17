@@ -5,7 +5,7 @@ This project is an archive extraction tool written in C (`archextract.c`) that p
 
 It supports archive versions `0x01` and `0x02` (with potential for `0x03` with updates), handles little-endian and big-endian byte orders, and supports processing methods like `NONE`, `ZLIB`, `LZMA`, and `FERNET`. The tool creates output directories, logs events to `unpack.log`, and stores file metadata in `file_info.txt`. Verbosity levels can be adjusted with the `-v` flag for debugging.
 
-To install, compile the C code using `gcc -o archextract archextract.c` and make sure `unpack_data.py` is in the same directory.
+To install, compile the C code using `gcc -o archextract archextract.c -lz -llzma -lsodium` and make sure `unpack_data.py` is in the same directory.
 
 To run the program, use the following format:  
 `./archextract -i <input_archive> [-o <output_dir>] [-v [0|1|2]]`
